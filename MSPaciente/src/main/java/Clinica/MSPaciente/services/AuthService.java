@@ -16,13 +16,13 @@ public class AuthService implements IAuthServices{
     IAuthRepository authRepository;
 
     @Override
-    public modelPaciente add(modelPaciente paci){
-        return authRepository.save(paci);
+    public modelPaciente add(modelPaciente paciente){
+        return authRepository.save(paciente);
     }
 
     @Override
-    public modelPaciente update(modelPaciente paci){
-        return authRepository.save(paci);
+    public modelPaciente update(modelPaciente paciente){
+        return authRepository.save(paciente);
     }
 
     @Override

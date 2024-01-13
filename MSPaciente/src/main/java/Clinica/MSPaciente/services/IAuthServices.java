@@ -6,8 +6,8 @@ import Clinica.MSPaciente.model.modelPaciente;
 
 public interface IAuthServices {
     
-    public modelPaciente add (modelPaciente paci);
-    public modelPaciente update (modelPaciente paci);
+    public modelPaciente add (modelPaciente paciente);
+    public modelPaciente update (modelPaciente paciente);
     public boolean delete (int id);
     public List<modelPaciente> findAll();
     public modelPaciente findById(int id);
