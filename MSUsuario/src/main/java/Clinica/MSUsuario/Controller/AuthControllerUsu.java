@@ -20,6 +20,8 @@ import Clinica.MSUsuario.Exception.ApiResponseUsu;
 import Clinica.MSUsuario.Exception.UsuarioNotFoundException;
 import Clinica.MSUsuario.Mapper.UsuarioMapper;
 import Clinica.MSUsuario.dto.AuthRequestUsu;
+import Clinica.MSUsuario.dto.AuthResponseUsu;
+import Clinica.MSUsuario.jwt.JwtToken;
 import Clinica.MSUsuario.model.modelUsuario;
 import Clinica.MSUsuario.service.IAuthServiceUsu;
 
@@ -32,6 +34,9 @@ public class AuthControllerUsu {
 
     @Autowired
     UsuarioMapper usuarioMapper;
+
+    @Autowired
+    private JwtToken jwtTokenCroos;
 
     //busqueda general
     @GetMapping("/getAll")
@@ -127,5 +132,17 @@ public class AuthControllerUsu {
             .body(new ApiResponseUsu<>(HttpStatus.INTERNAL_SERVER_ERROR.value(),
             "Error al eliminar usuario", null));
         }
+    }
+
+    @PostMapping()
+    public ResponseEntity<?> post(@RequestBody AuthRequestUsu requestUsu) throws Exception{
+        if (!authServicesUsu.validarCredenciales(requestUsu.getUsuario(), requestUsu.getClave())) {
+            return new ResponseEntity<String>("INVALID_CREDENTIALS", HttpStatus.UNAUTHORIZED);
+        }
+
+        String token = jwtTokenCroos.generateToken(requestUsu);
+        AuthResponseUsu response = new AuthResponseUsu(token, requestUsu.getUsuario(), "1d");
+
+        return ResponseEntity.ok(response);
     }
 }
