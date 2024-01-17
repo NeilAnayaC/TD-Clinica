@@ -2,6 +2,7 @@ package Clinica.MSUsuario.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,17 @@ public class AuthServiceUsu implements IAuthServiceUsu{
     public modelUsuario findById(int id){
         Optional<modelUsuario> model = authRepositoryUsu.findById(id);
         return model.get();
+    }
+
+    @Override
+    public boolean validarCredenciales(String usuario, String clave){
+        List<modelUsuario> result = (List<modelUsuario>) authRepositoryUsu.findAll();
+        List<modelUsuario> resultFilter = result.stream()
+        .filter(t -> t.getUsuario().equals(usuario) && t.getClave().equals(clave))
+        .collect(Collectors.toList());
+        if(null == resultFilter || resultFilter.isEmpty()){
+            return false;
+        }
+        return true;
     }
 }

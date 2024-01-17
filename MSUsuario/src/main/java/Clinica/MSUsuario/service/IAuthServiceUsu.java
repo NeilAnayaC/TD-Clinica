@@ -10,4 +10,5 @@ public interface IAuthServiceUsu {
     public boolean delete (int id);
     public List<modelUsuario> findAll();
     public modelUsuario findById(int id);
+    public boolean validarCredenciales(String usuario, String clave);
 }
