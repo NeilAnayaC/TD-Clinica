@@ -54,7 +54,9 @@ public class AuthController {
     //busqueda por ID
     @GetMapping("getById")
     public ResponseEntity<ApiResponse<AuthRequest>> getById(@RequestParam int id){
+        //sfinal String mensaje1 = "eroor al buscar paciente";
         try{
+            
             modelPaciente modelPaciente = authServices.findById(id);
             if(modelPaciente !=null){
                 AuthRequest authRequest = pacienteMapper.entityToDto(modelPaciente);
@@ -68,7 +70,7 @@ public class AuthController {
         }catch(Exception ex){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
             .body(new ApiResponse<>(HttpStatus.INTERNAL_SERVER_ERROR.value(),
-             "Error al buscar paciente", null));
+            "eroor al buscar paciente", null));
         }
     }
 

@@ -18,7 +18,10 @@ public class HistoriaService implements IHistoriaService{
 
     @Override
     public modelHistoria add(modelHistoria historia){
+       // if(historia != null)
         return historiaRepository.save(historia);
+      //  else
+       //  return null;
     }
 
     @Override
