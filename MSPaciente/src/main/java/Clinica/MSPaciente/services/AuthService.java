@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import Clinica.MSPaciente.Redis.DBcache;
 import Clinica.MSPaciente.model.modelPaciente;
 import Clinica.MSPaciente.repository.IAuthRepository;
 
@@ -33,7 +34,7 @@ public class AuthService implements IAuthServices{
     }
 
     @Override
-    @Cacheable("findAll")
+    @Cacheable(value = DBcache.CACHE_NAME)
     public List<modelPaciente> findAll(){
         return(List<modelPaciente>) authRepository.findAll();
     }
@@ -45,7 +46,7 @@ public class AuthService implements IAuthServices{
     }
 
     @Override
-    @Cacheable("findAllRedis")
+    @Cacheable(value = DBcache.CACHE_NAME)
     public List<modelPaciente> findAllRedis(){
         return(List<modelPaciente>) authRepository.findAll();
     }
