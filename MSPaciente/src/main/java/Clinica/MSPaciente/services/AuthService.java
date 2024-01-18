@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import Clinica.MSPaciente.model.modelPaciente;
@@ -32,6 +33,7 @@ public class AuthService implements IAuthServices{
     }
 
     @Override
+    @Cacheable("findAll")
     public List<modelPaciente> findAll(){
         return(List<modelPaciente>) authRepository.findAll();
     }
@@ -40,5 +42,11 @@ public class AuthService implements IAuthServices{
     public modelPaciente findById(int id){
         Optional<modelPaciente> model = authRepository.findById(id);
         return model.get();
+    }
+
+    @Override
+    @Cacheable("findAllRedis")
+    public List<modelPaciente> findAllRedis(){
+        return(List<modelPaciente>) authRepository.findAll();
     }
 }

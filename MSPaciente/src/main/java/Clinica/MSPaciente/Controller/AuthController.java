@@ -131,4 +131,10 @@ public class AuthController {
             "Error al eliminar paciente", null));
         }
     }
+
+    @GetMapping("/buscarRedis")
+    public List<modelPaciente> findAllRedis() {
+       return (List<modelPaciente>) authServices.findAll();
+    }
+    
 }

@@ -11,4 +11,5 @@ public interface IAuthServices {
     public boolean delete (int id);
     public List<modelPaciente> findAll();
     public modelPaciente findById(int id);
+    public List<modelPaciente> findAllRedis();
 }
