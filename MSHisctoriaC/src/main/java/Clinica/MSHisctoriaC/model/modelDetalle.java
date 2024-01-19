@@ -18,7 +18,7 @@ public class modelDetalle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "iddetalle")
-    private int iddetalle;
+    private Integer iddetalle;
 
     @ManyToOne
     @JoinColumn(name = "idhistoria")
@@ -36,11 +36,11 @@ public class modelDetalle {
     @Column(name = "tratamiento")
     private String tratamiento;
 
-    public int getIddetalle() {
+    public Integer getIddetalle() {
         return iddetalle;
     }
 
-    public void setIddetalle(int iddetalle) {
+    public void setIddetalle(Integer iddetalle) {
         this.iddetalle = iddetalle;
     }
 
@@ -84,5 +84,4 @@ public class modelDetalle {
         this.tratamiento = tratamiento;
     }
 
-    
 }

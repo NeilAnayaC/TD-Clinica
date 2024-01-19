@@ -16,10 +16,10 @@ public class modelHistoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idhistoria")
-    private int idhistoria;
+    private Integer idhistoria;
 
     @Column(name = "pacienteid")
-    private int pacienteid;
+    private Integer pacienteid;
 
     @Column(name = "fechacreacion")
     private Date fechacreacion;
@@ -30,19 +30,19 @@ public class modelHistoria {
     @Column(name = "diagnostico")
     private String diagnostio;
 
-    public int getIdhistoria() {
+    public Integer getIdhistoria() {
         return idhistoria;
     }
 
-    public void setIdhistoria(int idhistoria) {
+    public void setIdhistoria(Integer idhistoria) {
         this.idhistoria = idhistoria;
     }
 
-    public int getPacienteid() {
+    public Integer getPacienteid() {
         return pacienteid;
     }
 
-    public void setPacienteid(int pacienteid) {
+    public void setPacienteid(Integer pacienteid) {
         this.pacienteid = pacienteid;
     }
 
