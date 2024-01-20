@@ -3,6 +3,8 @@ package Clinica.MSUsuario.Controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import Clinica.MSUsuario.Exception.ApiResponseUsu;
 import Clinica.MSUsuario.Exception.UsuarioNotFoundException;
 import Clinica.MSUsuario.Mapper.UsuarioMapper;
+import Clinica.MSUsuario.Message.MensajesParametrizados;
 import Clinica.MSUsuario.dto.AuthRequestUsu;
 import Clinica.MSUsuario.dto.AuthResponseUsu;
 import Clinica.MSUsuario.jwt.JwtToken;
@@ -28,7 +31,9 @@ import Clinica.MSUsuario.service.IAuthServiceUsu;
 @RestController
 @RequestMapping("/api/usuario")
 public class AuthControllerUsu {
+
     
+    private static final Logger logger = LoggerFactory.getLogger(AuthControllerUsu.class);
     @Autowired
     IAuthServiceUsu authServicesUsu;
 
@@ -38,6 +43,7 @@ public class AuthControllerUsu {
     @Autowired
     private JwtToken jwtTokenCroos;
 
+    
     //busqueda general
     @GetMapping("/getAll")
         public ResponseEntity<ApiResponseUsu<List<AuthRequestUsu>>> getAll(){
@@ -134,15 +140,26 @@ public class AuthControllerUsu {
         }
     }
 
+//private String generarTokenAutenticacion(modelUsuario usuario) {
+    // aqui generaremos el token con JWT
+//return "asdfsjfhdskjhfkjdshfjdbsfkjbdskjfbdskjbfdsbfdsbfnbdsjfbdsjbfdsjbjdsbfjdsbfjbdsjbdsjbdfsj";
+//}
+
     @PostMapping()
     public ResponseEntity<?> post(@RequestBody AuthRequestUsu requestUsu) throws Exception{
-        if (!authServicesUsu.validarCredenciales(requestUsu.getUsuario(), requestUsu.getClave())) {
-            return new ResponseEntity<String>("INVALID_CREDENTIALS", HttpStatus.UNAUTHORIZED);
+        try {
+            if (!authServicesUsu.validarCredenciales(requestUsu.getUsuario(), requestUsu.getClave())) {
+                return new ResponseEntity<String>("INVALID_CREDENTIALS", HttpStatus.UNAUTHORIZED);
+            }
+
+            String token = jwtTokenCroos.generateToken(requestUsu);
+            AuthResponseUsu response = new AuthResponseUsu(token, requestUsu.getUsuario(), "1d");
+
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            // Manejo de la excepción
+           logger.error(MensajesParametrizados.MENSAJE_ERROR_AUTENTICACION, e.getMessage());
+            return new ResponseEntity<String>("INTERNAL_SERVER_ERROR", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
-        String token = jwtTokenCroos.generateToken(requestUsu);
-        AuthResponseUsu response = new AuthResponseUsu(token, requestUsu.getUsuario(), "1d");
-
-        return ResponseEntity.ok(response);
     }
 }
