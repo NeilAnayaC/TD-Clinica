@@ -78,6 +78,18 @@
             <version>0.11.1</version>
             <scope>runtime</scope>
         </dependency>
+
+		<!-- Logback -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <!-- SLF4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
 	</dependencies>
 
 	<build>
