@@ -21,7 +21,7 @@ public class modelDetalle {
     private Integer iddetalle;
 
     @ManyToOne
-    @JoinColumn(name = "idhistoria")
+    @JoinColumn(name = "idhistoria" ,referencedColumnName ="idhistoria")
     private modelHistoria historia;
 
     @Column(name = "fechadetalle")
