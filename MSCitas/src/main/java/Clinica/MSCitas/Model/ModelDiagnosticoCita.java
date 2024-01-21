@@ -23,8 +23,8 @@ public class ModelDiagnosticoCita {
     @JoinColumn(name = "citasid", referencedColumnName ="citasid")
     private ModelCitas citas;
 
-    @Column(name = "diagnosticodetalle")
-    private String diagnosticodetalle;
+    @Column(name = "diagnostico")
+    private String diagnostico;
 
     @Column(name = "estado")
     private String estado;
@@ -48,12 +48,12 @@ public class ModelDiagnosticoCita {
         this.citas = citas;
     }
 
-    public String getDiagnosticodetalle() {
-        return diagnosticodetalle;
+    public String getDiagnostico() {
+        return diagnostico;
     }
 
-    public void setDiagnosticodetalle(String diagnosticodetalle) {
-        this.diagnosticodetalle = diagnosticodetalle;
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
     }
 
     public String getEstado() {
@@ -71,6 +71,8 @@ public class ModelDiagnosticoCita {
     public void setPacienteid(int pacienteid) {
         this.pacienteid = pacienteid;
     }
+
+    
 
     
 }
