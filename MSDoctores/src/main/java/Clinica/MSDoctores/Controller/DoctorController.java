@@ -1,5 +1,7 @@
 package Clinica.MSDoctores.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -56,9 +58,9 @@ public class DoctorController {
      }
 
      @GetMapping("/getAlldoctor")
-     public ResponseEntity<Iterable<DoctorModel>> getAll(){
+     public ResponseEntity<List<DoctorModel>> getAll(){
          try {
-             Iterable<DoctorModel> doctores = doctorService.findAll();
+             List<DoctorModel> doctores = doctorService.findAll();
              return new ResponseEntity<>(doctores, HttpStatus.OK);
          } catch (Exception e) {
              return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

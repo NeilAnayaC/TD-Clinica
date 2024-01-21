@@ -1,6 +1,8 @@
  package Clinica.MSDoctores.Service;
 
- import org.springframework.beans.factory.annotation.Autowired;
+ import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Service;
 
  import Clinica.MSDoctores.Model.DoctorModel;
@@ -23,7 +25,7 @@
      }
 
      @Override
-     public Iterable<DoctorModel> findAll(){
+     public List<DoctorModel> findAll(){
          return doctorRespository.findAll();
      }
 
