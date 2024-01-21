@@ -6,16 +6,16 @@ public class DiagnosticoCitaResquets implements Serializable{
     
     private static final long serialVersionUID = 1L;
     private int citasid;
-    private String diagnosticodetalle;
+    private String diagnostico;
     private String estado;
     private int pacienteid;
     
     public DiagnosticoCitaResquets() {
     }
 
-    public DiagnosticoCitaResquets(int citasid, String diagnosticodetalle, String estado, int pacienteid) {
+    public DiagnosticoCitaResquets(int citasid, String diagnostico, String estado, int pacienteid) {
         this.citasid = citasid;
-        this.diagnosticodetalle = diagnosticodetalle;
+        this.diagnostico = diagnostico;
         this.estado = estado;
         this.pacienteid = pacienteid;
     }
@@ -28,12 +28,12 @@ public class DiagnosticoCitaResquets implements Serializable{
         this.citasid = citasid;
     }
 
-    public String getDiagnosticodetalle() {
-        return diagnosticodetalle;
+    public String getDiagnostico() {
+        return diagnostico;
     }
 
-    public void setDiagnosticodetalle(String diagnosticodetalle) {
-        this.diagnosticodetalle = diagnosticodetalle;
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
     }
 
     public String getEstado() {
