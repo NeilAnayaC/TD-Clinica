@@ -10,6 +10,7 @@ public class DetalleMapper {
     
     public DetalleRequest entityToDto(modelDetalle detalle){
         DetalleRequest dto = new DetalleRequest();
+        dto.setIdhistoria(detalle.getHistoria().getIdhistoria());
         dto.setFechadetalle(detalle.getFechadetalle());
         dto.setDescripcion(detalle.getDescripcion());
         dto.setResultado(detalle.getResultado());
