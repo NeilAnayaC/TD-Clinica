@@ -22,7 +22,7 @@ import Clinica.MSHisctoriaC.model.modelHistoria;
 import Clinica.MSHisctoriaC.service.IHistoriaService;
 
 @RestController
-@RequestMapping("/api/detalle")
+@RequestMapping("/api/historia")
 public class HistoriaController {
     
     @Autowired

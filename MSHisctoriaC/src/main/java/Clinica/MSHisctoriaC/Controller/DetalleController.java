@@ -32,7 +32,7 @@ public class DetalleController {
     DetalleMapper detalleMapper;
 
     
-    @GetMapping("/getAll/detalle")
+    @GetMapping("/getAll")
         public ResponseEntity<ApiResponseH<List<DetalleRequest>>> getAll(){
             try{
                 List<modelDetalle> detalles = detalleService.findAll();
@@ -49,7 +49,7 @@ public class DetalleController {
         }
 
         //busqueda por ID
-    @GetMapping("/getById/detalle")
+    @GetMapping("/getById")
     public ResponseEntity<ApiResponseH<DetalleRequest>> getById(@RequestParam int id){
         //sfinal String mensaje1 = "eroor al buscar paciente";
         try{
@@ -72,7 +72,7 @@ public class DetalleController {
     }
 
     //crear paciente
-    @PostMapping("/create/detalle")
+    @PostMapping("/create")
     public ResponseEntity<ApiResponseH<DetalleRequest>> create(@RequestBody DetalleRequest detalleRequest) {
         try{
             modelDetalle detalleModel = detalleMapper.dtoTOEntity(detalleRequest);
@@ -89,7 +89,7 @@ public class DetalleController {
     }
 
     //Modificar paciente
-    @PutMapping("/update/detalle")
+    @PutMapping("/update")
     public ResponseEntity<ApiResponseH<DetalleRequest>> update(@RequestBody DetalleRequest detalleRequest) {
         try{
             modelDetalle detalle = detalleService.update(detalleMapper.dtoTOEntity(detalleRequest));

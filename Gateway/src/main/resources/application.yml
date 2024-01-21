@@ -1,0 +1,82 @@
+server:
+  port: 6001
+
+jwt:
+  secret: Key#SuperSecret$ClinicatTest#JavaMicroservices#942617920
+
+spring:
+  application:
+    name: Gateway
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
+      routes:      
+      - id: MSUsuario
+        uri: http://localhost:82
+        predicates:
+          - Path=/usuario/**
+        filters:
+          - StripPrefix=1
+      - id: appaciente
+        uri: http://localhost:81
+        predicates:
+          - Path=/paciente/**
+        filters:
+          - StripPrefix=1
+          - JwtAuthenticationFilter
+      - id: appDoctores
+        uri: http://localhost:87
+        predicates:
+          - Path=/doctores/**
+        filters:
+          - StripPrefix=1
+          - JwtAuthenticationFilter
+      - id: appHistoriC-rutaDetalle
+        uri: http://localhost:83
+        predicates:
+          - Path=/detalle/**
+        filters:
+          - StripPrefix=1
+          - JwtAuthenticationFilter
+      - id: appHistoriC-rutaHistoria
+        uri: http://localhost:83
+        predicates:
+          - Path=/historia/**
+        filters:
+          - StripPrefix=1
+          - JwtAuthenticationFilter
+      - id: appCitas-rutaCitas
+        uri: http://localhost:84
+        predicates:
+          - Path=/Cita/**
+        filters:
+          - StripPrefix=1
+          - JwtAuthenticationFilter
+      - id: appCitas-rutaDiagnosticoCita
+        uri: http://localhost:84
+        predicates:
+          - Path=/DiagnosticoCita/**
+        filters:
+          - StripPrefix=1
+          - JwtAuthenticationFilter
+      - id: appLaboratorio-rutaAnalisis
+        uri: http://localhost:86
+        predicates:
+          - Path=/Analisis/**
+        filters:
+          - StripPrefix=1
+          - JwtAuthenticationFilter
+      - id: appLaboratorio-rutaResultado
+        uri: http://localhost:86
+        predicates:
+          - Path=/Resultados/**
+        filters:
+          - StripPrefix=1
+          - JwtAuthenticationFilter
