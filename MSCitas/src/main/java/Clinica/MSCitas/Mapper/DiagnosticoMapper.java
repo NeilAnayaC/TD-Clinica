@@ -1,19 +1,31 @@
 package Clinica.MSCitas.Mapper;
 
-import java.util.List;
+import org.springframework.stereotype.Component;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
-
-import Clinica.MSCitas.Dto.DiagnosticoCitaResponse;
+//import Clinica.MSCitas.Dto.CitasRequest;
 import Clinica.MSCitas.Dto.DiagnosticoCitaResquets;
+//import Clinica.MSCitas.Model.ModelCitas;
 import Clinica.MSCitas.Model.ModelDiagnosticoCita;
 
-@Mapper
-public interface DiagnosticoMapper {
+@Component
+public class DiagnosticoMapper {
+
+    public DiagnosticoCitaResquets entityToDto(ModelDiagnosticoCita diagnostico){
+        DiagnosticoCitaResquets dto = new DiagnosticoCitaResquets();
+        dto.setCitasid(diagnostico.getCitas().getCitasid());
+        dto.setDiagnostico(diagnostico.getDiagnostico());
+        dto.setEstado(diagnostico.getEstado());
+        dto.setPacienteid(diagnostico.getPacienteid());
+        return dto;
+    }
+
+    public ModelDiagnosticoCita dtoTOEntity(DiagnosticoCitaResquets dto){
+        ModelDiagnosticoCita diagnostico = new ModelDiagnosticoCita();
+        diagnostico.setDiagnostico(dto.getDiagnostico());
+        diagnostico.setEstado(dto.getEstado());
+        diagnostico.setPacienteid(dto.getPacienteid());
+        return diagnostico;
+    }
     
-    DiagnosticoMapper INSTANCE = Mappers.getMapper(DiagnosticoMapper.class);
-    ModelDiagnosticoCita toEntity(DiagnosticoCitaResquets dto);
-    DiagnosticoCitaResponse toDto(ModelDiagnosticoCita entity);
-    List<DiagnosticoCitaResponse> toDtoList(List<ModelDiagnosticoCita> entities);
+
 }
