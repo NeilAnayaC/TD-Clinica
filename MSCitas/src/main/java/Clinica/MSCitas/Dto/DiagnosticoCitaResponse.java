@@ -6,13 +6,13 @@ public class DiagnosticoCitaResponse implements Serializable{
     
     private static final long serialVersionUID =1L;
     private final int citasid;
-    private final String diagnosticodetalle;
+    private final String diagnostico;
     private final String estado;
     private final int pacienteid;
     
-    public DiagnosticoCitaResponse(int citasid, String diagnosticodetalle, String estado, int pacienteid) {
+    public DiagnosticoCitaResponse(int citasid, String diagnostico, String estado, int pacienteid) {
         this.citasid = citasid;
-        this.diagnosticodetalle = diagnosticodetalle;
+        this.diagnostico = diagnostico;
         this.estado = estado;
         this.pacienteid = pacienteid;
     }
@@ -21,8 +21,8 @@ public class DiagnosticoCitaResponse implements Serializable{
         return citasid;
     }
 
-    public String getDiagnosticodetalle() {
-        return diagnosticodetalle;
+    public String getDiagnostico() {
+        return diagnostico;
     }
 
     public String getEstado() {
