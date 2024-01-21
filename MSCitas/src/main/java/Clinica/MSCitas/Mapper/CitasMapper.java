@@ -1,18 +1,26 @@
 package Clinica.MSCitas.Mapper;
 
-import java.util.List;
-
-import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
 import Clinica.MSCitas.Dto.CitasRequest;
-import Clinica.MSCitas.Dto.CitasResponse;
+
 import Clinica.MSCitas.Model.ModelCitas;
 
-@Mapper
-public interface CitasMapper {
-    CitasMapper INTANCE = Mappers.getMapper(CitasMapper.class);
-    ModelCitas toEntity(CitasRequest dto);
-    CitasResponse toDto(ModelCitas entiity);
-    List<CitasResponse> toDtoList(List<ModelCitas> entities);
+@Component
+public class CitasMapper {
+    public CitasRequest entityToDto(ModelCitas citas){
+    CitasRequest dto = new CitasRequest();
+        dto.setPacienteid(citas.getPacienteid());
+        dto.setDoctorid(citas.getDoctorid());
+        dto.setFecha(citas.getFecha());
+        return dto;
+    }
+
+    public ModelCitas dtoTOEntity(CitasRequest dto){
+        ModelCitas citas = new ModelCitas();
+        citas.setPacienteid(dto.getPacienteid());
+        citas.setDoctorid(dto.getDoctorid());
+        citas.setFecha(dto.getFecha());
+        return citas;
+    }
 }
