@@ -103,7 +103,7 @@ public class DetalleController {
         }catch(Exception ex){
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
             .body(new ApiResponseH<>(HttpStatus.INTERNAL_SERVER_ERROR.value(),
-            "Error al actualizar paciente", null));
+            "Error al actualizar Detalle", null));
         }
     }
 }
