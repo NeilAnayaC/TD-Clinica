@@ -18,10 +18,10 @@ spring:
               allowedMethods: "*"
               allowedHeaders: "*"
       routes:      
-      - id: MSUsuario
+      - id: MsUsuario
         uri: http://localhost:82
         predicates:
-          - Path=/usuario/**
+          - Path=/usuarios/**
         filters:
           - StripPrefix=1
       - id: appaciente
