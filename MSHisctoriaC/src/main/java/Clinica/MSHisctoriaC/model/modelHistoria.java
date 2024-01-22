@@ -28,7 +28,7 @@ public class modelHistoria {
     private String medico;
 
     @Column(name = "diagnostico")
-    private String diagnostio;
+    private String diagnostico;
 
     public Integer getIdhistoria() {
         return idhistoria;
@@ -62,13 +62,15 @@ public class modelHistoria {
         this.medico = medico;
     }
 
-    public String getDiagnostio() {
-        return diagnostio;
+    public String getDiagnostico() {
+        return diagnostico;
     }
 
-    public void setDiagnostio(String diagnostio) {
-        this.diagnostio = diagnostio;
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
     }
+
+    
 
     
     
