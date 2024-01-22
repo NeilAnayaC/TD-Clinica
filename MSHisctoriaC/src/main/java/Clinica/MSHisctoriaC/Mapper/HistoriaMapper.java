@@ -12,7 +12,7 @@ public class HistoriaMapper {
         dto.setPacienteid(historia.getPacienteid());
         dto.setFechacreacrion(historia.getFechacreacion());
         dto.setMedico(historia.getMedico());
-        dto.setDiagnostico(historia.getDiagnostio());
+        dto.setDiagnostico(historia.getDiagnostico());
         return dto;
     }
 
@@ -21,7 +21,7 @@ public class HistoriaMapper {
         historia.setPacienteid(dto.getPacienteid());
         historia.setFechacreacion(dto.getFechacreacrion());
         historia.setMedico(dto.getMedico());
-        historia.setDiagnostio(dto.getDiagnostico());
+        historia.setDiagnostico(dto.getDiagnostico());
         return historia;
     }
 }
