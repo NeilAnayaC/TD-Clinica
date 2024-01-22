@@ -6,6 +6,7 @@ import java.util.Date;
 public class HistoriaRequest implements Serializable{
     
     private static final long serialVersionUID = 1L;
+    private Integer idhistoria;
     private Integer pacienteid;
     private Date fechacreacrion;
     private String medico;
@@ -51,6 +52,14 @@ public class HistoriaRequest implements Serializable{
 
     public void setDiagnostico(String diagnostico) {
         this.diagnostico = diagnostico;
+    }
+
+    public Integer getIdhistoria() {
+        return idhistoria;
+    }
+
+    public void setIdhistoria(Integer idhistoria) {
+        this.idhistoria = idhistoria;
     }
     
     
