@@ -89,7 +89,7 @@ public class AnalisiController {
         }
     }
 
-    @PutMapping("/update/detalle")
+    @PutMapping("/update")
     public ResponseEntity<LaboratorioApiResponse<AnalisisResquest>> update(@RequestBody AnalisisResquest analisisResquest) {
         try{
             ModelAnalisis modelAnalisis = analisisService.actualizarAnalisis(analisisMapper.dtoTOEntity(analisisResquest));
