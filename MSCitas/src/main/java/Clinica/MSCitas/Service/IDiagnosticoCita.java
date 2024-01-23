@@ -11,4 +11,6 @@ public interface IDiagnosticoCita {
     public ModelDiagnosticoCita buscarIdDiagnosticocita(int id);
     public ModelDiagnosticoCita actualizarDiagnosticocita(ModelDiagnosticoCita diagnostico);
     public boolean deleteDiagnosticocita(int id);
+
+    public ModelDiagnosticoCita updatekafka(ModelDiagnosticoCita diagnostico);
 }
