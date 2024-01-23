@@ -22,6 +22,7 @@ import Clinica.MSCitas.Exception.CitasApiResponse;
 import Clinica.MSCitas.Exception.CitasNotFoundException;
 import Clinica.MSCitas.Mapper.CitasMapper;
 import Clinica.MSCitas.Mapper.DiagnosticoMapper;
+import Clinica.MSCitas.Message.CitasMessagePublish;
 import Clinica.MSCitas.Model.ModelCitas;
 import Clinica.MSCitas.Model.ModelDiagnosticoCita;
 import Clinica.MSCitas.Service.ICitasService;
@@ -37,6 +38,9 @@ public class DiagnosticoCitaController {
 
     @Autowired
     DiagnosticoMapper diagnosticoMapper;
+
+    @Autowired
+    CitasMessagePublish messagePublish;
 //CitasMapper.dtoTOEntity(citasRequest);
     @PostMapping("/create")
     public ResponseEntity<CitasApiResponse<DiagnosticoCitaResquets>> add(@RequestBody DiagnosticoCitaResquets diagnosticoCitaResquets) {
@@ -129,5 +133,15 @@ public class DiagnosticoCitaController {
             .body(new CitasApiResponse<>(HttpStatus.INTERNAL_SERVER_ERROR.value(),
             "Error al eliminar diagnosticoCita", null));
         }
+    }
+
+    @PutMapping("/actulizarDiag")
+    public ResponseEntity<?> actualizarDiagnostico(@RequestBody DiagnosticoCitaResquets resquets) throws Exception{
+        ModelDiagnosticoCita model = new ModelDiagnosticoCita();
+        model.setDiagnosticoid(resquets.getDiagnosticoid());
+        model.setDiagnostico(resquets.getDiagnostico());
+        model = diagnosticoService.updatekafka(model);
+        messagePublish.sendUpdateDiagnosticoEvent(model);
+        return ResponseEntity.status(HttpStatus.CREATED).body(model);
     }
 }
