@@ -13,20 +13,20 @@ import Clinica.MSCitas.Model.ModelDiagnosticoCita;
 @Component
 public class CitasMessagePublish {
     
-    @Value("${spring.kafka.template.default-topic}")
-    String clinica;
+ @Value("${spring.kafka.template.default-topic}")
+ String clinica;
 
-    // private Logger log = LoggerFactory.getLogger(PayMessagePublish.class);
+ // private Logger log = LoggerFactory.getLogger(PayMessagePublish.class);
 
-    @Autowired
-    KafkaTemplate<Integer, String> kafkaTemplate;
+ @Autowired
+ KafkaTemplate<Integer, String> kafkaTemplate;
 
-    @Autowired
-    ObjectMapper objectMapper;
+ @Autowired
+ ObjectMapper objectMapper;
 
-    public void sendUpdateDiagnosticoEvent(ModelDiagnosticoCita modelDiagnosticoCita) throws JsonProcessingException {
+ public void sendUpdateDiagnosticoEvent(ModelDiagnosticoCita modelDiagnosticoCita) throws JsonProcessingException {
 
-        String value = objectMapper.writeValueAsString(modelDiagnosticoCita);
-        kafkaTemplate.send(clinica, value);
-    }
+     String value = objectMapper.writeValueAsString(modelDiagnosticoCita);
+     kafkaTemplate.send(clinica, value);
+ }
 }
