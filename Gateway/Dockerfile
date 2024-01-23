@@ -7,7 +7,7 @@ RUN mvn -f /home/app/pom.xml clean package -DskipTests
 #java --version
 FROM  openjdk:19
 VOLUME /tmp
-EXPOSE 80
+EXPOSE 6002
 COPY --from=build /home/app/target/*.jar app.jar
 ENV SPRING_PROFILES_ACTIVE=docker
 
