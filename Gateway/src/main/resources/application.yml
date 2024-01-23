@@ -80,3 +80,5 @@ spring:
         filters:
           - StripPrefix=1
           - JwtAuthenticationFilter
+           
+  
