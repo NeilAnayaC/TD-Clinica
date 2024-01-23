@@ -49,8 +49,8 @@ public class DiagnosticoCitaService implements IDiagnosticoCita{
         return true;
     }
 
-    @Override
-    public ModelDiagnosticoCita updatekafka(ModelDiagnosticoCita diagnostico){
-        return diagnosticoCitaRepository.save(diagnostico);
-    }
+ @Override
+ public ModelDiagnosticoCita updatekafka(ModelDiagnosticoCita diagnostico){
+     return diagnosticoCitaRepository.save(diagnostico);
+ }
 }
