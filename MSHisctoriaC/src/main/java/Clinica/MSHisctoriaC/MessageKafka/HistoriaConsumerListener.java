@@ -21,7 +21,7 @@ public class HistoriaConsumerListener {
     IHistoriaService historiaService;
 
     @KafkaListener(topics = "${spring.kafka.template.default-topic}")
-    public void OnMessage(ConsumerRecord<Integer, String> consumerRecord)
+    public void OnMessage(ConsumerRecord<String, String> consumerRecord)
             throws JsonMappingException, JsonProcessingException {
        // log.info("****************************************************************");
        // log.info("ConsumerRecord : {}", consumerRecord.value());
