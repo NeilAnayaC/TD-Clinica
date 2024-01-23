@@ -130,7 +130,7 @@ public class AuthControllerUsu {
             if(eliminar){
                 logger.info(MensajesParametrizados.MENSAJE_ELIMINAR_USUARIO_EXITOSO);
                 return ResponseEntity.ok(new ApiResponseUsu<>(HttpStatus.OK.value(),
-                "Usuario Eliminado correctamente", null));
+                MensajesParametrizados.MENSAJE_ELIMINAR_USUARIO_EXITOSO, null));
             }else{
                 logger.info(MensajesParametrizados.MENSAJE_USUARIO_NO_ENCONTRADO);
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
