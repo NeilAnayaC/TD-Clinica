@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  usuario:
+    container_name: ms-usuario
+    build:
+      context: ./MSUsuario
+    ports:
+      - "8082:82"
+    networks:
+    - td2023
+networks:
+  td2023:
+    name: ms-unu
