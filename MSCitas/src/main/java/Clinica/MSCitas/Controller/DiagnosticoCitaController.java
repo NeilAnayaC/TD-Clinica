@@ -135,7 +135,7 @@ public class DiagnosticoCitaController {
         }
     }
 
- @PutMapping("/actulizarDiag")
+ @PostMapping("/registarDiag")
  public ResponseEntity<?> actualizarDiagnostico(@RequestBody DiagnosticoCitaResquets resquets) throws Exception{
      ModelDiagnosticoCita model = new ModelDiagnosticoCita();
      model.setDiagnosticoid(resquets.getDiagnosticoid());
