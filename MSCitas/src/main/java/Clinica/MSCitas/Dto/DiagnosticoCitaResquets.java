@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class DiagnosticoCitaResquets implements Serializable{
     
     private static final long serialVersionUID = 1L;
+    private int diagnosticoid;
     private int citasid;
     private String diagnostico;
     private String estado;
@@ -50,6 +51,19 @@ public class DiagnosticoCitaResquets implements Serializable{
 
     public void setPacienteid(int pacienteid) {
         this.pacienteid = pacienteid;
+    }
+
+    public int getDiagnosticoid() {
+        return diagnosticoid;
+    }
+
+    public void setDiagnosticoid(int diagnosticoid) {
+        this.diagnosticoid = diagnosticoid;
+    }
+
+    public DiagnosticoCitaResquets(int diagnosticoid, String diagnostico) {
+        this.diagnosticoid = diagnosticoid;
+        this.diagnostico = diagnostico;
     }
 
     
