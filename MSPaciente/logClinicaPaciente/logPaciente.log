@@ -1,0 +1,54 @@
+[2024-01-23 10:22:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:22:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:23:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:23:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:23:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:23:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:24:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:24:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:24:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:24:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:25:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:25:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:25:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:25:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:26:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:26:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:26:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:26:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:27:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:27:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:27:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:27:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:28:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:28:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:28:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:28:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:29:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:29:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:29:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:29:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:30:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:30:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:30:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:30:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:31:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:31:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:31:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:31:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:32:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:32:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:32:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:32:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:33:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:33:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:33:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:33:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:34:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:34:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:34:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:34:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:35:09] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:35:09] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:35:39] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:35:39] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
