@@ -53,18 +53,18 @@ public class DiagnosticoCitaResquets implements Serializable{
         this.pacienteid = pacienteid;
     }
 
-    public int getDiagnosticoid() {
-        return diagnosticoid;
-    }
+ public int getDiagnosticoid() {
+     return diagnosticoid;
+ }
 
-    public void setDiagnosticoid(int diagnosticoid) {
-        this.diagnosticoid = diagnosticoid;
-    }
+ public void setDiagnosticoid(int diagnosticoid) {
+     this.diagnosticoid = diagnosticoid;
+ }
 
-    public DiagnosticoCitaResquets(int diagnosticoid, String diagnostico) {
-        this.diagnosticoid = diagnosticoid;
-        this.diagnostico = diagnostico;
-    }
+ public DiagnosticoCitaResquets(int diagnosticoid, String diagnostico) {
+     this.diagnosticoid = diagnosticoid;
+     this.diagnostico = diagnostico;
+ }
 
     
 }
