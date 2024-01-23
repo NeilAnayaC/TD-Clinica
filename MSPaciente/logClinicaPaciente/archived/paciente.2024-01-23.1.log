@@ -1,0 +1,110 @@
+[2024-01-23 09:51:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:51:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:52:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:52:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:52:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:52:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:52:39] - GET "/api/paciente/getAll", parameters={}
+[2024-01-23 09:52:39] - Mapped to Clinica.MSPaciente.Controller.AuthController#getAll()
+[2024-01-23 09:52:39] - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+[2024-01-23 09:52:39] - MSPACIENTE - LISTADO EXITOSAMENTE
+[2024-01-23 09:52:39] - Found thread-bound EntityManager [SessionImpl(837703086<open>)] for JPA transaction
+[2024-01-23 09:52:39] - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+[2024-01-23 09:52:39] - Setting JDBC Connection [HikariProxyConnection@1155281201 wrapping com.mysql.cj.jdbc.ConnectionImpl@3ca278bc] read-only
+[2024-01-23 09:52:39] - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[2024-01-23 09:52:39] - begin
+[2024-01-23 09:52:39] - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@14cca8a7]
+[2024-01-23 09:52:39] - Created new SQL alias : mp1_0
+[2024-01-23 09:52:39] - Registration of TableGroup [StandardTableGroup(Clinica.MSPaciente.model.modelPaciente(422917648177600))] with identifierForTableGroup [Clinica.MSPaciente.model.modelPaciente] for NavigablePath [Clinica.MSPaciente.model.modelPaciente] 
+[2024-01-23 09:52:39] - DomainResult Graph:
+ \-EntityResultImpl [Clinica.MSPaciente.model.modelPaciente(422917648177600)]
+ |  +-BasicFetch [Clinica.MSPaciente.model.modelPaciente(422917648177600).apellido]
+ |  +-BasicFetch [Clinica.MSPaciente.model.modelPaciente(422917648177600).celular]
+ |  +-BasicFetch [Clinica.MSPaciente.model.modelPaciente(422917648177600).genero]
+ |  \-BasicFetch [Clinica.MSPaciente.model.modelPaciente(422917648177600).nombre]
+
+[2024-01-23 09:52:39] - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (mp1 : Clinica.MSPaciente.model.modelPaciente(422917648177600)) {
+          primaryTableReference : paciente as mp1_0
+        }
+      }
+    }
+
+[2024-01-23 09:52:39] - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[2024-01-23 09:52:39] - Initializer list:
+	  Clinica.MSPaciente.model.modelPaciente(422917648177600) -> EntityResultInitializer(Clinica.MSPaciente.model.modelPaciente(422917648177600))@2098794315 (SingleTableEntityPersister(Clinica.MSPaciente.model.modelPaciente))
+
+[2024-01-23 09:52:39] - select mp1_0.pacienteid,mp1_0.apellido,mp1_0.celular,mp1_0.genero,mp1_0.nombre from paciente mp1_0
+[2024-01-23 09:52:39] - Extracted JDBC value [0] - [1]
+[2024-01-23 09:52:39] - (EntityResultInitializer) Hydrated EntityKey (Clinica.MSPaciente.model.modelPaciente(422917648177600)): 1
+[2024-01-23 09:52:39] - (EntityResultInitializer) Created new entity instance [Clinica.MSPaciente.model.modelPaciente(422917648177600)#1] : 1959339753
+[2024-01-23 09:52:39] - Extracted JDBC value [1] - [TORRES ACEVEDO]
+[2024-01-23 09:52:39] - Extracted JDBC value [2] - [942617920]
+[2024-01-23 09:52:39] - Extracted JDBC value [3] - [MASCULINO]
+[2024-01-23 09:52:39] - Extracted JDBC value [4] - [RENZO]
+[2024-01-23 09:52:39] - (EntityResultInitializer) Done materializing entityInstance : Clinica.MSPaciente.model.modelPaciente(422917648177600)#1
+[2024-01-23 09:52:39] - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@39c321a8
+[2024-01-23 09:52:40] - Initiating transaction commit
+[2024-01-23 09:52:40] - Committing JPA transaction on EntityManager [SessionImpl(837703086<open>)]
+[2024-01-23 09:52:40] - committing
+[2024-01-23 09:52:40] - Resetting read-only flag of JDBC Connection [HikariProxyConnection@1155281201 wrapping com.mysql.cj.jdbc.ConnectionImpl@3ca278bc]
+[2024-01-23 09:52:40] - Not closing pre-bound JPA EntityManager after transaction
+[2024-01-23 09:52:40] - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2024-01-23 09:52:40] - Writing [Clinica.MSPaciente.Exeption.ApiResponse@3f987d84]
+[2024-01-23 09:52:40] - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+[2024-01-23 09:52:40] - Completed 200 OK
+[2024-01-23 09:53:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:53:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:53:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:53:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:54:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:54:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:54:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:54:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:55:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:55:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:55:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:55:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:56:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:56:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:56:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:56:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:57:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:57:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:57:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:57:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:58:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:58:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:58:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:58:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:59:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:59:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 09:59:09] - GET "/api/paciente/buscarRedis", parameters={}
+[2024-01-23 09:59:09] - Mapped to Clinica.MSPaciente.Controller.AuthController#findAllRedis()
+[2024-01-23 09:59:09] - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+[2024-01-23 09:59:09] - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2024-01-23 09:59:09] - Writing [[Clinica.MSPaciente.model.modelPaciente@74c926e9]]
+[2024-01-23 09:59:09] - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+[2024-01-23 09:59:09] - Completed 200 OK
+[2024-01-23 09:59:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 09:59:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:00:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:00:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:00:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:00:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:01:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:01:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:01:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:01:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:02:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:02:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:02:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:02:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:03:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:03:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:03:38] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:03:38] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+[2024-01-23 10:04:08] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2024-01-23 10:04:08] - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
