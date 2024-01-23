@@ -19,7 +19,7 @@ public class CitasMessagePublish {
     // private Logger log = LoggerFactory.getLogger(PayMessagePublish.class);
 
     @Autowired
-    KafkaTemplate<String, String> kafkaTemplate;
+    KafkaTemplate<Integer, String> kafkaTemplate;
 
     @Autowired
     ObjectMapper objectMapper;
