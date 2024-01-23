@@ -38,7 +38,7 @@ public class DiagnosticoCitaController {
 
     @Autowired
     DiagnosticoMapper diagnosticoMapper;
-
+   
     @Autowired
     CitasMessagePublish messagePublish;
 //CitasMapper.dtoTOEntity(citasRequest);
@@ -135,13 +135,13 @@ public class DiagnosticoCitaController {
         }
     }
 
-    @PutMapping("/actulizarDiag")
-    public ResponseEntity<?> actualizarDiagnostico(@RequestBody DiagnosticoCitaResquets resquets) throws Exception{
-        ModelDiagnosticoCita model = new ModelDiagnosticoCita();
-        model.setDiagnosticoid(resquets.getDiagnosticoid());
-        model.setDiagnostico(resquets.getDiagnostico());
-        model = diagnosticoService.updatekafka(model);
-        messagePublish.sendUpdateDiagnosticoEvent(model);
-        return ResponseEntity.status(HttpStatus.CREATED).body(model);
-    }
+ @PutMapping("/actulizarDiag")
+ public ResponseEntity<?> actualizarDiagnostico(@RequestBody DiagnosticoCitaResquets resquets) throws Exception{
+     ModelDiagnosticoCita model = new ModelDiagnosticoCita();
+     model.setDiagnosticoid(resquets.getDiagnosticoid());
+     model.setDiagnostico(resquets.getDiagnostico());
+     model = diagnosticoService.updatekafka(model);
+     messagePublish.sendUpdateDiagnosticoEvent(model);
+     return ResponseEntity.status(HttpStatus.CREATED).body(model);
+ }
 }
