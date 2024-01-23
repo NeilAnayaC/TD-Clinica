@@ -55,6 +55,7 @@ public class AuthControllerUsu {
                 return ResponseEntity.ok(new ApiResponseUsu<>(HttpStatus.OK.value(),
                  "Consulta de listado de Usuario exitosa", authRequests));
             }catch(Exception ex){
+                logger.error(MensajesParametrizados.MENSAJE_ERROR, ex);
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(new ApiResponseUsu<>(HttpStatus.INTERNAL_SERVER_ERROR.value(),
                  "Error al procesar la solicitud", null));
@@ -71,6 +72,7 @@ public class AuthControllerUsu {
                 return ResponseEntity.ok(new ApiResponseUsu<>(HttpStatus.OK.value(),
                  "Consulta de Busqueda por ID exitosa", authRequest));
             }else{
+                logger.info(MensajesParametrizados.MENSAJE_USUARIO_NO_ENCONTRADO_ID);
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body(new ApiResponseUsu<>(HttpStatus.NOT_FOUND.value(),
                  "Usuario no encontrado", null));
@@ -91,7 +93,7 @@ public class AuthControllerUsu {
             AuthRequestUsu creaAuthRequest = usuarioMapper.entityToDto(usuarioModel);
             return ResponseEntity.status(HttpStatus.CREATED)
             .body(new ApiResponseUsu<>(HttpStatus.CREATED.value(), 
-            "Usuario creado", creaAuthRequest));
+            MensajesParametrizados.MENSAJE_CREAR_USUARIO_EXITOSO, creaAuthRequest));
         }catch(Exception ex){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
             .body(new ApiResponseUsu<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), 
@@ -126,9 +128,11 @@ public class AuthControllerUsu {
         try{
             boolean eliminar = authServicesUsu.delete(id);
             if(eliminar){
+                logger.info(MensajesParametrizados.MENSAJE_ELIMINAR_USUARIO_EXITOSO);
                 return ResponseEntity.ok(new ApiResponseUsu<>(HttpStatus.OK.value(),
                 "Usuario Eliminado correctamente", null));
             }else{
+                logger.info(MensajesParametrizados.MENSAJE_USUARIO_NO_ENCONTRADO);
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body(new ApiResponseUsu<>(HttpStatus.NOT_FOUND.value(), 
                 "No se encontro al Usuario a eliminar", null));
@@ -149,16 +153,17 @@ public class AuthControllerUsu {
     public ResponseEntity<?> post(@RequestBody AuthRequestUsu requestUsu) throws Exception{
         try {
             if (!authServicesUsu.validarCredenciales(requestUsu.getUsuario(), requestUsu.getClave())) {
+                logger.info(MensajesParametrizados.MENSAJE_ERROR_AUTENTICACION);
                 return new ResponseEntity<String>("INVALID_CREDENTIALS", HttpStatus.UNAUTHORIZED);
             }
-
+            logger.info(MensajesParametrizados.MENSAJE_AUTENTICACION_EXITOSA);
             String token = jwtTokenCroos.generateToken(requestUsu);
             AuthResponseUsu response = new AuthResponseUsu(token, requestUsu.getUsuario(), "1d");
 
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             // Manejo de la excepción
-           logger.error(MensajesParametrizados.MENSAJE_ERROR_AUTENTICACION, e.getMessage());
+           logger.error(MensajesParametrizados.MENSAJE_ERROR_INTERNO_SERVIDOR, e.getMessage());
             return new ResponseEntity<String>("INTERNAL_SERVER_ERROR", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
