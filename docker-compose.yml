@@ -9,6 +9,60 @@ services:
       - "8082:82"
     networks:
     - td2023
+  paciente:
+    container_name: ms-paciente
+    build:
+      context: ./MSPaciente
+    ports:
+      - "8081:81"
+    networks:
+    - td2023
+  laboratorio:
+    container_name: ms-laboratorio
+    build:
+      context: ./MSLaboratorio
+    ports:
+      - "8086:86"
+    networks:
+    - td2023
+  historiac:
+    container_name: ms-historiac
+    build:
+      context: ./MSHisctoriaC
+    ports:
+      - "8083:83"
+    networks:
+    - td2023
+ #doctores:
+ #  container_name: ms-doctores
+ #  build:
+ #    context: ./MSDoctores
+ #  ports:
+ #    - "8087:87"
+ #  networks:
+ #  - td2023
+ #citas:
+ #  container_name: ms-citas
+ #  build:
+ #    context: ./MSCitas
+ #  ports:
+ #    - "8084:84"
+ #  networks:
+ #  - td2023
+  gateway:
+    build:
+      context: ./Gateway
+    ports:
+      - "6002:6002"
+    depends_on:
+      - usuario
+      - paciente
+      - laboratorio
+      - historiac
+      #- doctores
+      #- citas
+    networks:
+    - td2023
 networks:
   td2023:
     name: ms-unu
