@@ -5,9 +5,11 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import Clinica.MSUsuario.model.modelUsuario;
+import Clinica.MSUsuario.redis.DBCache;
 import Clinica.MSUsuario.repository.IAuthRepositoryUsu;
 
 @Service
@@ -33,6 +35,7 @@ public class AuthServiceUsu implements IAuthServiceUsu{
     }
 
     @Override
+    @Cacheable(value = DBCache.CACHE_NAME)
     public List<modelUsuario> findAll(){
         return(List<modelUsuario>) authRepositoryUsu.findAll();
     }

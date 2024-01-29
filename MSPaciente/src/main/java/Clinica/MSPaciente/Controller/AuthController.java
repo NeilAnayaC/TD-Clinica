@@ -148,9 +148,9 @@ public class AuthController {
         }
     }
 
-    @GetMapping("/buscarRedis")
-    public List<modelPaciente> findAllRedis() {
-       return (List<modelPaciente>) authServices.findAll();
-    }
+ // @GetMapping("/buscarRedis")
+ // public List<modelPaciente> findAllRedis() {
+ //    return (List<modelPaciente>) authServices.findAll();
+ // }
     
 }
